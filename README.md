@@ -16,4 +16,4 @@
 ## So, here we are
 
 - 'COMU' meaning is 'Not Related to Coding' via Facebook Gourp 'Living Coding'
-- Sometime we gonna ask to 'Not Releted to Coding' within Related to Coding Group
+- Sometime we gonna ask to 'Not Releted to Coding' within Programming Group
