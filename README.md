@@ -15,5 +15,5 @@
 
 ## So, here we are
 
-- 'COMU' meaning is 'Not Related to Coding' via Facebook Gourp 'Living Coding'
-- Sometime we gonna ask to 'Not Releted to Coding' within Programming Group
+- '코무' (reads 'Comu' or 'Comoo') is an abbreviated form of '코딩이랑 무관합니다만', which means 'Not related to coding'
+- This group was a spin off of '생활코딩' Facebook group where people are only allowed to post related to coding/tech/IT
