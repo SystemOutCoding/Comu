@@ -1,0 +1,51 @@
+web:
+    image: nginx:latest
+    container_name: app_nginx
+    ports:
+        - "8080:80"
+    volumes:
+        - ./nginx/www:/www
+        - ./site.conf:/etc/nginx/conf.d/site.conf
+    links:
+        - php
+
+php:
+    image: php:7-fpm
+    container_name: app_php
+    volumes:
+    - ./nginx/www:/www
+    links:
+    - mariadb
+    - redis
+
+mariadb:
+  image: mariadb:latest
+  container_name: app_mariadb
+  environment:
+    - MYSQL_ROOT_PASSWORD=rootPassword
+    - MYSQL_DATABASE=databaseName
+    - MYSQL_USER=username
+    - MYSQL_PASSWORD=userPassword
+  volumes:
+    - ./mariadb/data:/var/lib/mysql
+
+redis:
+  image: phpdockerio/redis:latest
+  container_name: app_redis
+
+phpmyadmin:
+  image: phpmyadmin/phpmyadmin
+  container_name: app_phpmyadmin
+  environment:
+   - PMA_ARBITRARY=1
+  restart: always
+  ports:
+   - 8181:80
+  volumes:
+   - /sessions
+  links:
+   - mariadb:mysql
+  environment:
+   - MYSQL_USERNAME=root
+   - MYSQL_ROOT_PASSWORD=rootPassword
+   - PMA_HOST=mysql
