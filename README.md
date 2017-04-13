@@ -22,6 +22,7 @@
 
 ## 행사(event) & 지난 공지(Facebook Previous Notice)
 ### Welcomt to Maker World 2017 
+- Microsoft MeltingPot 7th 2016.10.1.(토) ~ 2017.3.31.(금) (총 6개월)
 - Recruitment [LINK](https://www.facebook.com/photo.php?fbid=974109686054726&set=gm.1320637407995951&type=1&theater)
 - Welcomt to Maker World 2017 [LINK](https://www.facebook.com/groups/System.out.Coding/permalink/1344766175583074/)
 
