@@ -22,7 +22,7 @@
 
 ## 행사(event) & 지난 공지(Facebook Previous Notice)
 ### Welcomt to Maker World 2017 
-- recruitment [LINK] (https://www.facebook.com/photo.php?fbid=974109686054726&set=gm.1320637407995951&type=1&theater)
+- Recruitment [LINK](https://www.facebook.com/photo.php?fbid=974109686054726&set=gm.1320637407995951&type=1&theater)
 - Welcomt to Maker World 2017 [LINK](https://www.facebook.com/groups/System.out.Coding/permalink/1344766175583074/)
 
 ### Microsoft MeltingPot 7th
