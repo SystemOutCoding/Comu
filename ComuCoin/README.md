@@ -1,6 +1,6 @@
 # ComuCoin White paper
 
-## 개발자 그룹(?) 코딩이랑 무관합나다만, 의 새로운 토큰을 공개합니다. 
+## 개발자 그룹(?) 코딩이랑 무관합니다만, 의 새로운 토큰을 공개합니다. 
 
 - [GOTO_COMU](https://www.facebook.com/groups/System.out.Coding/)
 - 총발행량 : 1,000,000comu
