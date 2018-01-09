@@ -7,6 +7,9 @@
 ### Webpage
 [hello2018.me](https://hello2018.me)
 
+### GitHub
+[github.com/Juneyoung-Kang/hello-2018-homepage](https://github.com/Juneyoung-Kang/hello-2018-homepage)
+
 ### Features
 - 시작페이지로 설정
 - 디지털 시계
