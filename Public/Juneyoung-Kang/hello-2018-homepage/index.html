@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hello 2018</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Hello 2018" />
+	<meta name="keywords" content="Hello 2018" />
+	<meta name="author" content="JUNEYOUNG KANG" />
+
+  <!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="Hello 2018"/>
+	<meta property="og:image" content="/images/thumbnail.png"/>
+	<meta property="og:url" content="https://hello2018.me"/>
+	<meta property="og:site_name" content="Hello 2018"/>
+	<meta property="og:description" content="지금 바로 Hello 2018을 시작페이지로 설정해보세요!"/>
+	<meta name="twitter:title" content="Hello 2018" />
+	<meta name="twitter:image" content="/images/thumbnail.png" />
+	<meta name="twitter:url" content="https://hello2018.me" />
+	<meta name="twitter:card" content="" />
+
+	<link rel="stylesheet" href="/fonts/NanumSquare/nanumsquare.css" type="text/css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css'>
+
+	<script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+	<script>
+		jQuery(document).ready(function($) {
+			$.ajax({
+				// 결과를 한글로 받을 수 있다.
+			url : "https://api.wunderground.com/api/42087dade24aac1a/geolookup/conditions/lang:KR/q/Korea/Seoul.json",
+			dataType : "jsonp",
+			success : function(parsed_json) {
+				 // location
+				 var location = parsed_json.location;
+				 var location_s = ""; //"<p>국가명(country_name):  "+location.country_name+"</p>"
+				 //location_s+= "<p>도시명(city_name):  "+location.city+"</p>";
+				 //location_s+= "<p>경도(lat):  "+location.lat+"</p>";
+				 //location_s+= "<p>위도(lon):  "+location.lon+"</p>";
+
+			 $("#locationinfo").append(location_s);
+				 // 관측지에 대한 정보
+				 var observ = parsed_json.current_observation;
+				 var observ_s = "<p style='float: right;margin-top: 40px;margin-right: 30px;font-size: 20px;text-align: right;'>"+observ.display_location.full+"</p>"; //"<p>관측지 주소 전체 : "+observ.display_location.full+"</p>"
+				 //observ_s += "<p>관측지 주소 국가 : "+observ.display_location.state_name+"</p>";
+				 //observ_s += "<p>관측지 주소 도시 : "+observ.display_location.city+"</p>";
+				 //observ_s += "<p>관측지 경도(latitude) : "+observ.display_location.latitude+"</p>";
+				 //observ_s += "<p>관측지 위도(longitude) : "+observ.display_location.longitude+"</p>";
+				 //observ_s += "<p>관측지 해발고도(elevation) : "+observ.display_location.elevation+"</p>";
+
+			 $("#observinfo").append(observ_s);
+				 // 날씨정보
+				 //var weather_s = "<p>"+observ.observation_time+"</p>"; //"<p>업데이트 정보:  "+observ.observation_time+"</p>"
+				 //weather_s +="<p>"+observ.weather+", </p>"; //"<p>현재 날씨 :  "+observ.weather+"</p>"
+				 //weather_s +="<p>현재 온도 화씨(섭씨):  "+observ.temperature_string+"</p>";
+				 //weather_s +="<p>현재 온도 화씨:  "+observ.temp_f+"</p>";
+				 //weather_s +="<p>"+observ.temp_c+"°C</p>";
+				 var weather_s = "<p style='float: right;margin-top: 40px;margin-right: 10px;font-size: 20px;text-align: right;'>"+observ.weather+"</p>";
+				 weather_s += "<p style='float: right;margin-top: 40px;margin-right: 10px;font-size: 35px;text-align: right;'>"+observ.temp_c+"°C</p>"
+				 //weather_s += "<p style='float: right;margin-top: 30px;margin-right: 10px;font-size: 16px;text-align: right;'>"+observ.observation_time+"</p>";
+				 //weather_s +="<p>상대 습도 :  "+observ.relative_humidity+"</p>";
+				 //weather_s +="<p>바람 정보 전체 :  "+observ.wind_string+"</p>";
+				 //weather_s +="<p>풍향 :  "+observ.wind_dir+"</p>";
+				 //weather_s +="<p>풍속 (mph):  "+observ.wind_mph+"</p>";
+				 //weather_s +="<p>풍속 (kph):  "+observ.wind_kph+"</p>";
+				 //weather_s +="<p>자외선 양:  "+observ.UV+"</p>";
+				 //weather_s +="<p>아이콘 : "+observ.icon+"</p>";
+				 //weather_s +="<p>아이콘 그림 :  "+"<img src='"+observ.icon_url+"'/></p>";
+
+			 $("#weatherinfo").append(weather_s);
+			}
+			});
+		});
+	</script>
+
+
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="favorites.css">
+
+</head>
+
+<body>
+  <section class="cover">
+    <h1 class="logo">Hello 2018</h1>
+
+    <div class="content">
+      <h2>2018년에는 행복만이 가득하기를</h2>
+      <hr>
+      <p id="count"></p>
+    </div>
+
+		<div data-role="page">
+				<div id="locationinfo">
+				</div>
+
+				<div id="observinfo">
+				</div>
+
+				<div id="weatherinfo">
+				</div>
+
+		</div><!-- /page -->
+
+		<div class='search'>
+			<div class='search_bar'>
+				<form name="search_form" method="GET" action="https://www.google.com/search">
+					<input id='searchOne' type='checkbox' onclick="document.search_form.q.focus()">
+					<label for='searchOne'>
+						<i class='icon ion-android-search'></i>
+						<i class='last icon ion-android-close'></i>
+						<p>|</p>
+					</label>
+					<input placeholder='Google Search' type='text' name="q" size="50" maxlength="255" value="">
+				</form>
+			</div>
+		</div>
+
+		<div class="container">
+  		<a href="https://www.google.com/">
+    		<div class="overlay"></div>
+    		<span>Google</span>
+  		</a>
+		</div>
+
+		<div class="container2">
+  		<a href="https://www.facebook.com/">
+    		<div class="overlay2"></div>
+    		<span>Facebook</span>
+  		</a>
+		</div>
+
+		<div class="container3">
+  		<a href="https://www.twitter.com/">
+    		<div class="overlay3"></div>
+    		<span>Twitter</span>
+  		</a>
+		</div>
+
+		<div class="container4">
+  		<a href="https://www.instagram.com/">
+    		<div class="overlay4"></div>
+    		<span>Instagram</span>
+  		</a>
+		</div>
+
+		<div class="container5">
+  		<a href="https://www.youtube.com/">
+    		<div class="overlay5"></div>
+    		<span>Youtube</span>
+  		</a>
+		</div>
+
+		<div class="container6">
+  		<a href="https://www.naver.com/">
+    		<div class="overlay6"></div>
+    		<span>Naver</span>
+  		</a>
+		</div>
+
+		<div class="container7">
+  		<a href="https://www.daum.net">
+    		<div class="overlay7"></div>
+    		<span>Daum</span>
+  		</a>
+		</div>
+
+    <p class="copy">이 웹페이지는 PC 화면에 최적화되어 있습니다.<br /><br />version 1.00 (release 2018.01.08)<br>Copyright by Juneyoung Kang 2018 (Juneyoung Dev Studio)</p>
+
+		<button href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('https://hello2018.me');">시작페이지로 설정(IE)</button>
+
+	</section>
+	<script src="index.js"></script>
+</body>
+</html>
